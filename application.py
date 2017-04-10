@@ -12,15 +12,14 @@ application = Flask(__name__)
 keyword_dict = {'keyword 1':'movies','keyword 2':'technology','keyword 3':'sports','keyword 4':'life','keyword 5':'news','keyword 6':'travel','keyword 7':'health','keyword 8':'awesome','keyword 9':'energy','keyword 10':'music','Nothing here':'no','':'no'}
 geo_dict = {'d1':10,'d2':50,'d3':100,'d4':200,'d5':500,'d6':1000,'d7':5000,'Nothing here':0,'': 0}
 
-#elastic_search_host = "search-twittrend-es-yae67nigk6vybgmn2pnmulohle.us-east-1.es.amazonaws.com"
-elastic_search_host = "search-twittrend-es-2-lgaopyp5wxgdummwpesq5c672u.us-east-1.es.amazonaws.com"
+elastic_search_host = "search-twittrend-es-yae67nigk6vybgmn2pnmulohle.us-east-1.es.amazonaws.com"
 
 #Define ElasticSearch credentials
 es = Elasticsearch(hosts = [{"host" : elastic_search_host,
                               "port" : 443}],
                               use_ssl='True')
 
-
+#Handle POST Requests
 @application.route ('/',methods = ['POST','GET'])
 def update_map2():
     
@@ -40,16 +39,10 @@ def update_map2():
             
                 print("Subscription Request")
                 r = str(requests.get(js['SubscribeURL']))
-                #print(r)
             
             elif js["Message"]:
                 print("Message Recieved")
-                #r = str(js["Message"])
                 message = json.loads(js["Message"])
-                #message_content = message["text"]
-                #message_sentiment = message["sentiment"]
-                #print("content = ",message_content)
-                #print("sentiment = ",message_sentiment)
                 es.index(index='final-tweet-index',doc_type='twitter',body = message)
                 
             print(js,file=sys.stderr)
@@ -68,7 +61,7 @@ def update_map2():
     #Update HTML webpage
     return render_template("index.html",lat = center_lat, long = center_long, key = keyword_dict[key], dist = geo_dict[dist], tweets = tweets)
     
-    
+#Get tweets from elasticsearch
 def gettweets(keyword):
     
     tweets = []

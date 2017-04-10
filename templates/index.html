@@ -71,8 +71,6 @@
 
           for(var i = 0; i < size; i++) {
 
-            //latitude[i] = tweets2[i]["_source"]["lat"];
-            //longitude[i] = tweets2[i]["_source"]["lng"];
             latitude[i]=tweets2[i]["_source"]["coordinates"][0];
             longitude[i]=tweets2[i]["_source"]["coordinates"][1];
           }
@@ -115,11 +113,6 @@
             document.getElementById("demo3").innerHTML = click_lat;
             document.getElementById("demo4").innerHTML = click_lng;
 
-            /*
-            var xhttp = new XMLHttpRequest();
-            xhttp.open("GET", "application.py", true);
-            xhttp.send();
-            */
           });
 
           for(var i = 0; i < size; i++) {
@@ -136,7 +129,6 @@
 
               (function (markers, data) {
                 google.maps.event.addListener(markers, "click", function (e) {
-                    //Wrap the content inside an HTML DIV in order to set height and width of InfoWindow.
                     infoWindow.setContent("<div style = 'width:200px;min-height:40px'>" + data + "</div>");
                     infoWindow.open(map, markers);
                 });
