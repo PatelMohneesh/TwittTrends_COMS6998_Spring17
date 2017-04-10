@@ -1,11 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Sat Apr  8 19:05:15 2017
-
-@author: Mohneesh
-"""
-
 
 import boto3
 import time

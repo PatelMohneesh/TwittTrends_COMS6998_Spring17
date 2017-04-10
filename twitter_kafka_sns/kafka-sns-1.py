@@ -1,10 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Sun Apr  9 19:38:23 2017
-
-@author: Mohneesh
-"""
 
 from multiprocessing import Pool, TimeoutError, Lock
 import threading

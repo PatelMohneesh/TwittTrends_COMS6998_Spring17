@@ -1,10 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Sat Apr  8 16:26:22 2017
-
-@author: Mohneesh
-"""
 
 import boto3
 from twython import Twython
