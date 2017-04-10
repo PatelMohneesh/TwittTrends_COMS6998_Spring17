@@ -37,10 +37,10 @@ def getSQS():
             
             #Getting sentiment using Alchemy API
 
-            #result = json.loads(json.dumps( alchemy_language.sentiment( text = tweet['text']), indent = 2))
-            #docSentiment =  result['docSentiment']
-            #sentiment = docSentiment['type']
-            #tweet['sentiment'] = sentiment
+            result = json.loads(json.dumps( alchemy_language.sentiment( text = tweet['text']), indent = 2))
+            docSentiment =  result['docSentiment']
+            sentiment = docSentiment['type']
+            tweet['sentiment'] = sentiment
             tweet = json.dumps(tweet)
             print (tweet)
 
