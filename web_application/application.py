@@ -12,7 +12,7 @@ application = Flask(__name__)
 keyword_dict = {'keyword 1':'movies','keyword 2':'technology','keyword 3':'sports','keyword 4':'life','keyword 5':'news','keyword 6':'travel','keyword 7':'health','keyword 8':'awesome','keyword 9':'energy','keyword 10':'music','Nothing here':'no','':'no'}
 geo_dict = {'d1':10,'d2':50,'d3':100,'d4':200,'d5':500,'d6':1000,'d7':5000,'Nothing here':0,'': 0}
 
-elastic_search_host = "search-twittrend-es-yae67nigk6vybgmn2pnmulohle.us-east-1.es.amazonaws.com"
+elastic_search_host = "ES_host"
 
 #Define ElasticSearch credentials
 es = Elasticsearch(hosts = [{"host" : elastic_search_host,
