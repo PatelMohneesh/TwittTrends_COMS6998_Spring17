@@ -9,14 +9,14 @@ from multiprocessing import Pool, TimeoutError
 
 # Initializing SQS
 
-sqs = boto3.resource( 'sqs', aws_access_key_id="AKIAI37GWBF2JTQEFKDQ", aws_secret_access_key="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",region_name='us-east-1')
+sqs = boto3.resource( 'sqs', aws_access_key_id="AWS_key", aws_secret_access_key="AWS_Key",region_name='us-east-1')
 
 
 SQS_QUEUE_NAME='Twittrends'
 
 # Initializing Alchemy
 
-alchemy_api_key = '967b10634e30e3d4d868feb59d70fbded7432c45'
+alchemy_api_key = 'API_key'
 
 alchemy_language = AlchemyLanguageV1(api_key=alchemy_api_key)
 
@@ -39,9 +39,9 @@ def getSQS():
             #Pushing data to amazon sns
 
             
-            client = boto3.client('sns', aws_access_key_id="AKIAI37GWBF2JTQEFKDQ", aws_secret_access_key="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",region_name='us-east-1')
+            client = boto3.client('sns', aws_access_key_id="AWS_Key", aws_secret_access_key="AWS_Key",region_name='us-east-1')
             response = client.publish(
-                TargetArn= 'arn:aws:sns:us-east-1:743728513790:Twittrends-sns',
+                TargetArn= 'AWS_ARN',
                 Message=json.dumps({'default': tweet}),
                 MessageStructure='json'
             )
