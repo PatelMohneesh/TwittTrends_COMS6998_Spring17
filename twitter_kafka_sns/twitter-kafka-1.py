@@ -10,13 +10,13 @@ from kafka.errors import KafkaError
 #Access_Keys to be obtained from Twitter Application
 #Used to make Twitter API request
 
-TWITTER_ACCESS_TOKEN = '598322060-85YdYXf17Ecf30GXZdT7hNqypapNUfIbk6JzCHxv'
-TWITTER_ACCESS_TOKEN_SECRET = 'M6M1MLGQCNm8Rfb3wUOMx5h9b6i0LJuA25DbDgFMhlIwk'
+TWITTER_ACCESS_TOKEN = 'Twitter_Key'
+TWITTER_ACCESS_TOKEN_SECRET = 'Twitter_Key'
 
 #Consumer keys to access Twitter Application 
 
-TWITTER_APP_KEY = 'pDLnK0jtrrj3TOlj9eKr7yOQt'
-TWITTER_APP_KEY_SECRET = '6rZ2NeZq7MjC0lQVA501zAtuBso845njET2TTReENJRrmJTbet'
+TWITTER_APP_KEY = 'Twitter_Key'
+TWITTER_APP_KEY_SECRET = 'Twitter_Key'
 
 #Authenticating Credentials 
 
