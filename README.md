@@ -1,4 +1,4 @@
-# TwittTrends_COMS6998_Spring17
+# TwittMapper
 Homework 2 for Cloud Computing and Big Data course
 
 ###Steps to install and setup kafka
